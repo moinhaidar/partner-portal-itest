@@ -3,3 +3,9 @@ dist
 .tmp
 .sass-cache
 bower_components
+.project
+.idea/
+coverage/
+dist
+npm-debug.log
+
