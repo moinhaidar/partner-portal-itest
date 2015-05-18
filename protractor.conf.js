@@ -8,7 +8,7 @@ exports.config = {
     // The timeout in milliseconds for each script run on the browser.
     allScriptsTimeout: 360000,
 
-    baseUrl: 'http://partner-portal-dev.herokuapp.com/',
+    baseUrl: 'https://partner-portal-dev.herokuapp.com/',
 
     // How long to wait for a page to load.
     getPageTimeout: 10000,

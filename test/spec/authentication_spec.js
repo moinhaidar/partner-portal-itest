@@ -49,3 +49,23 @@ describe("User Authentication", function(){
     });
 
 });
+
+
+
+describe("Remember Me", function(){
+
+    iit("should able user to do remember me", function(){
+        ppPage.login_with_remember_me();
+
+        expect(browser.getCurrentUrl()).toMatch('dashboard');
+        expect(browser.getCurrentUrl()).toMatch('notification');
+
+        ppPage.logout();
+
+        var remember_me_checkbox = element.all(by.css('.checkboxbtn #remember_me'));
+        remember_me_checkbox.then(function(eles){
+            expect(eles[0].getAttribute('checked')).toBe('true');
+        });
+    });
+
+});
