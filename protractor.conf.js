@@ -50,7 +50,8 @@ exports.config = {
          new_applicant: './test/spec/new_application_spec.js',
          pipeline: './test/spec/pipeline_spec.js',
          merchant_show: './test/spec/merchant_show_spec.js',
-         doc_upload: './test/spec/document_upload_spec.js'
+         doc_upload: './test/spec/document_upload_spec.js',
+         dashboard: './test/spec/dashboard_spec.js'
     },
     
     jasmineNodeOpts: {
