@@ -49,4 +49,33 @@ describe("Merchants", function(){
         });
     });
 
+    iit("should able user to go from pipeline to loan calculator", function(){
+        ppPage.login();
+        var pipeline_link = element(by.css("a[href*=pipeline]"));
+        pipeline_link.click().then(function(){
+            var submission_link = element.all(by.css("a[href*=options]"));
+            submission_link.then(function(ele){
+                ele[0].click().then(function(){
+                    browser.sleep(5000);
+                    element.all(by.css('#options-items .collapseInit')).then(function(el){
+                        el[0].click();
+                        browser.sleep(5000);
+                        element.all(by.css('.loan-secton .offer-btn')).then(function(eles){
+                            eles[0].click();
+                            expect(browser.getCurrentUrl()).toMatch('merchant');
+                            expect(browser.getCurrentUrl()).toMatch('show');
+                        });
+                        browser.sleep(5000);
+                        element.all(by.css('#calculator .option-calculator')).then(function(eles){
+                            expect(eles[0].isPresent()).toBeTruthy();
+                        });
+                        element.all(by.css('#calculator .option-calculator p')).then(function(eles){
+                            expect(eles[0].getText()).toBe('Choose a term:')
+                        });
+                    });
+                });
+            });
+        });
+    });
+
 });
