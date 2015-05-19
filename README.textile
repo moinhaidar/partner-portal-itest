@@ -2,7 +2,12 @@ h1. Partner Portal iTest
 
 Partner Portal integration and load testing
 
-h2. Setup and running specs
+h2. Setup
+
+* npm install -g protractor
+* webdriver-manager update
+
+h2. Running specs
 
 * Clone this application
 * Go to application directory
