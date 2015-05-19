@@ -64,7 +64,13 @@ describe("Merchants", function(){
                             eles[0].click();
                             expect(browser.getCurrentUrl()).toMatch('merchant');
                             expect(browser.getCurrentUrl()).toMatch('show');
-                            browser.sleep(5000);
+                        });
+                        browser.sleep(5000);
+                        element.all(by.css('#calculator .option-calculator')).then(function(eles){
+                            expect(eles[0].isPresent()).toBeTruthy();
+                        });
+                        element.all(by.css('#calculator .option-calculator p')).then(function(eles){
+                            expect(eles[0].getText()).toBe('Choose a term:')
                         });
                     });
                 });
