@@ -1,0 +1,13 @@
+h1. Partner Portal iTest
+
+Partner Portal integration and load testing
+
+h2. Setup and running specs
+
+* Clone this application
+* Go to application directory
+* Run ./pp_test.sh
+ 
+h2. Documentation and Support
+
+Catch Team
