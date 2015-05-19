@@ -3,10 +3,10 @@
 exports.config = {
 
     // selenium address
-    seleniumAddress: 'http://localhost:4444/wd/hub',
+    // seleniumAddress: 'http://localhost:4444/wd/hub',
 
     // The timeout in milliseconds for each script run on the browser.
-    allScriptsTimeout: 360000,
+    allScriptsTimeout: 300000,
 
     baseUrl: 'https://partner-portal-dev.herokuapp.com/',
 
@@ -14,11 +14,11 @@ exports.config = {
     getPageTimeout: 10000,
 
     // sauceUser: 'moinhaidar',
-    // sauceKey: '204313c2-9589-40c9-b592-df91da7afbf6',
+    // sauceKey: '6886d137-2550-4d43-ac02-623fde2a283f',
 
     multiCapabilities: [
         {
-            'browserName': 'chrome',
+            'browserName': "chrome",
             // Number of times to run this set of capabilities (in parallel, unless
             // limited by maxSessions). Default is 1.
             count: 1,
@@ -38,7 +38,7 @@ exports.config = {
         },
 
         {
-            // 'browserName': 'firefox',
+            // 'browserName': "firefox",
             // count: 1,
             // shardTestFiles: false,
             // maxInstances: 1
@@ -61,7 +61,7 @@ exports.config = {
         includeStackTrace: true
     },
 
-    //directConnect: true,
+    directConnect: true, // Talk to browser driver directly ignoring selenium
 
     params: {
         login : {
