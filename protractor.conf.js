@@ -16,7 +16,16 @@ exports.config = {
     // sauceUser: 'moinhaidar',
     // sauceKey: '6886d137-2550-4d43-ac02-623fde2a283f',
 
-    multiCapabilities: [
+    capabilities: {
+        browserName: 'chrome',
+        count: 1,
+        maxInstances: 1,
+        'chromeOptions': {
+            'args': ["incognito=true","record-mod=false", "disable-application-cache=true"]
+        }
+    },
+
+    /*multiCapabilities: [
         {
             'browserName': "chrome",
             // Number of times to run this set of capabilities (in parallel, unless
@@ -43,7 +52,7 @@ exports.config = {
             // shardTestFiles: false,
             // maxInstances: 1
         }
-    ],
+    ], */
 
     suites: {
          auth: './test/spec/authentication_spec.js',
