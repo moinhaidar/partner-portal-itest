@@ -22,19 +22,10 @@ describe("Applicants", function(){
         loginButton.click();
     };
 
-
-//
-//    var mockModule;
-//    beforeEach(function(){
-//        mockModule = require('./mock_s3');
-//    });
-
-
     describe("Initiate Upload to s3", function(){
 
-
         it("upload to s3 from submission prepration", function(){
-            //  browser.addMockModule('httpBackendMock', mockModule.mockS3);
+        	
             login();
             var pipeline_link = element(by.css("a[href*=pipeline]"));
             pipeline_link.click();
@@ -59,7 +50,7 @@ describe("Applicants", function(){
                 _field = _field[0];
                 expect(_field.isDisplayed()).toBe(true);
                 //_field.sendKeys("/test/test_file.pdf");
-            })
+            });
 
 
             var doc_type_dropdown = upload_section.all(by.css('.document-type'));

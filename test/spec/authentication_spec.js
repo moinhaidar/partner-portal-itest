@@ -50,11 +50,9 @@ describe("User Authentication", function(){
 
 });
 
-
-
 describe("Remember Me", function(){
 
-    iit("should able user to do remember me", function(){
+    it("should enaable user to remember login id", function(){
         ppPage.login_with_remember_me();
 
         expect(browser.getCurrentUrl()).toMatch('dashboard');
@@ -65,6 +63,22 @@ describe("Remember Me", function(){
         var remember_me_checkbox = element.all(by.css('.checkboxbtn #remember_me'));
         remember_me_checkbox.then(function(eles){
             expect(eles[0].getAttribute('checked')).toBe('true');
+        });
+    });
+
+});
+
+describe("Logout", function(){
+
+    it("should logout and redirect user to homepage", function(){
+
+        ppPage.login();
+
+        element.all(by.css('.infoheader a')).then(function(ele){
+            ele[0].click().then(function(){
+                browser.sleep(3000);
+                expect(browser.getCurrentUrl()).toMatch(/\/login/);
+            });
         });
     });
 
