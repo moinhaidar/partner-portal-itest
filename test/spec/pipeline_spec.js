@@ -82,9 +82,30 @@ describe("Pipeline", function(){
                 browser.sleep(5000);
                 var funding_section = element(by.id('funding'));
                 funding_section.all(by.css('.item-title')).then(function(elements){
-                    expect(elements[0].getText()).toBe('Harolds Chicken');
+                    expect(elements[0].getText()).toBeDefined();
                 });
             });
+        });
+        
+        //RENEWALS
+        var renewals_link = element.all(by.css("a[href*=renewals]"));
+        renewals_link.then(function(ele){
+            expect(ele[0].getText()).toBe('RENEWALS');
+            ele[0].click();
+        });
+        browser.sleep(5000);
+
+        var renewals_section = element.all(by.css("#renewals-pipeline"));
+        var headings = renewals_section.all(by.css('.items-sort .col-md-2'));
+        headings.then(function(elements){
+            expect(elements[4].getText()).toBe("Amount");
+            expect(elements[5].getText()).toBe('% Paid');
+        });
+
+        renewals_section.all(by.css('.item-title')).then(function(elements){
+            if(elements[0]){
+                expect(elements[0].getText()).toBeDefined();
+            }
         });
 
     });

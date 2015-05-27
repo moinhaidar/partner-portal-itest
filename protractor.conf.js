@@ -8,7 +8,7 @@ exports.config = {
     // The timeout in milliseconds for each script run on the browser.
     allScriptsTimeout: 300000,
 
-    baseUrl: 'https://partner-portal-dev.herokuapp.com/',
+    baseUrl: 'https://partner-portal-dev.herokuapp.com/', //'http://localhost:9000/',
 
     // How long to wait for a page to load.
     getPageTimeout: 10000,
@@ -58,6 +58,7 @@ exports.config = {
          auth: './test/spec/authentication_spec.js',
          new_applicant: './test/spec/new_application_spec.js',
          pipeline: './test/spec/pipeline_spec.js',
+         merchant_search: './test/spec/merchant_search_spec.js',
          merchant_show: './test/spec/merchant_show_spec.js',
          doc_upload: './test/spec/document_upload_spec.js',
          dashboard: './test/spec/dashboard_spec.js'
